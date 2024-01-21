@@ -20,7 +20,7 @@ const wxFetch = (location) => {
 }
 
 
-locations.forEach(location => wxFetch(location));
+locations.map(location => wxFetch(location));
 
 
 function printData(data){
@@ -34,10 +34,15 @@ function printData(data){
 
   
 
-  //declare forecast variables
+  //grab 5 day high temperatures
   const forecastHighs = []
   for (let i = 0; i < 5; i++) {
     forecastHighs.push(data.daily.temperature_2m_max[i])
+  }
+
+  const citiesCurrent = {
+    "city": "Denver"
+
   }
  
 
