@@ -16,7 +16,7 @@ body {
 
 .currentCard {
     max-width: 200px;
-    max-height: 200px;
+    max-height: 300px;
     margin-left:  50px;
     margin-right: 0;
     text-align: center;
@@ -26,7 +26,6 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the alpha value here for the box shadow transparency */
     margin-top: 105px;
     align-items: center;
-    margin: auto;
 }
 
 .dayCard {

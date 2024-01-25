@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //create a function to attach event listeners to each button 
 function eventListeners(data){
-  const buttons = document.querySelectorAll('button[id^="button"]')
+  const buttons = document.querySelectorAll('button[id^="button"]') //fancy way of grabbing all buttons with an ID that starts with the word button 
     buttons.forEach((button, index) => {
       button.addEventListener('click', () => {
         displayCityInfo(data[index])
@@ -32,11 +32,11 @@ function displayCityInfo(city){
     
     //use set of ternary operators to distinguish cities
     locationElement.textContent =
-    city.id === 1 ? "Right Now: Denver" :
-    city.id === 2 ? "Right Now: Colorado Springs" :
-    city.id === 3 ? "Right Now: Pueblo" :
-    city.id === 4 ? "Right Now: Fort Collins" :
-    city.id === 5 ? "Right Now: Grand Junction" : ""
+    city.id === 1 ? "Denver" :
+    city.id === 2 ? "Colorado Springs" :
+    city.id === 3 ? "Pueblo" :
+    city.id === 4 ? "Fort Collins" :
+    city.id === 5 ? "Grand Junction" : ""
     
     //clear out previous city temp wind and wx icon
     tempElement.textContent = ""
@@ -47,8 +47,8 @@ function displayCityInfo(city){
     const currentTemp = parseInt(((city.current.temperature_2m * (9/5)) + 32))
     const currentWind = parseInt(city.current.wind_speed_10m/1.609)
     const currentWeather = city.current.weather_code
-    weatherIcon.width = "100px"
-    weatherIcon.height = "100px"
+    weatherIcon.style.width = "75px"
+    weatherIcon.style.height = "75px"
     
     //Setting Weather Codes
     if (currentWeather === 0){
