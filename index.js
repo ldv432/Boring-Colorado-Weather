@@ -1,38 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
   fetch("http://localhost:3000/cities")
     .then(res => res.json())
-    .then(data => printData(data))
+    .then(data => {
+      printData(data)
+      eventListeners(data)
+    })
+    
     // .then(data => console.log(data))
 });
 
-const cityData = {}
-
-
-
-
-
-
-
+//create a function to attach event listeners to each button 
+function eventListeners(data){
+  const buttons = document.querySelectorAll('button[id^="button"]')
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        displayCityInfo(data[index])
+    })
+  })
+}
 
 function printData(data){
+  //define current card
+  const currentCard = document.getElementById("currentCard")
+  
+  
   const denver = data[0]
   const coSprings = data[1]
   const pueblo = data[2]
   const foco = data[3]
   const gj = data[4]
-  console.log(denver)
-  //define current card
-  const currentCard = document.getElementById("currentCard")
-  
-  //define each city's button
-  const denverButton = document.getElementById("denverButton")
-  const coSpringsButton = document.getElementById("cospringsButton")
-  const puebButton = document.getElementById("puebButton")
-  const focoButton = document.getElementById("focoButton")
-  const gjButton = document.getElementById("gjButton")
-   
   //set click events for each city and use a call back
   denverButton.addEventListener('click', () => {
+  
     const denverTemp = denver.current.temperature_2m
     const denverWind = denver.current.wind_speed_10m
     const denverWindDirection = denver.current.wind_direction_10m
@@ -43,23 +42,18 @@ function printData(data){
     currentCard.append(denverWindDirection)
     currentCard.append(denverWeatherCode)
   })
-  coSpringsButton.addEventListener('click', () => handleClickEvent)
-  puebButton.addEventListener('click', () => handleClickEvent)
-  focoButton.addEventListener('click', () => handleClickEvent)
-  gjButton.addEventListener('click', () => handleClickEvent)
-  
-  function handleClickEvent(){
-    currentCard.innerHTML = ""
-  
-  }
+ 
   // iterate and define city data
-  // data.map(city => {
-  //   const currentTemp = city.current.temperature_2m
-  //   const currentWind = city.current.wind_speed_10m
-  //   const currentWindDirection = city.current.wind_direction_10m
-  //   const currentWeather = city.current.weather_code
+  data.forEach(city => {
+    const currentTemp = city.current.temperature_2m
+    const currentWind = city.current.wind_speed_10m
+    const currentWindDirection = city.current.wind_direction_10m
+    const currentWeather = city.current.weather_code
 
-  // })
+    
+
+    
+  })
 
 
 
