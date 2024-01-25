@@ -19,6 +19,57 @@ function eventListeners(data){
   })
 }
 
+function displayCityInfo(city){
+    //declare currents card elements
+    const locationElement = document.getElementById("location")
+    const tempElement = document.getElementById("temperature")
+    const windElement = document.getElementById("windspeed")
+    const weatherIcon = document.getElementById("weatherIcon")
+    
+    //use set of ternary operators to distinguish cities
+    locationElement.textContent =
+    city.id === 1 ? "Denver" :
+    city.id === 2 ? "Colorado Springs" :
+    city.id === 3 ? "Pueblo" :
+    city.id === 4 ? "Fort Collins" :
+    city.id === 5 ? "Grand Junction" : ""
+    
+    
+    
+    //clear out previous city temp wind and wx icon
+    tempElement.textContent = ""
+    windElement.textContent = ""
+    weatherIcon.src = ""
+    
+    //declare currents
+    const currentTemp = city.current.temperature_2m
+    const currentWind = city.current.wind_speed_10m
+    const currentWeather = city.current.weather_code
+    
+    //Setting Weather Codes
+    if (currentWeather === 0){
+      weatherIcon.src = "https://i.ibb.co/1ztXVkx/sunny-day-16458.png"
+    }
+    if (currentWeather === 1 || 2){
+      weatherIcon.src = "https://i.ibb.co/pKyB85C/sun-and-blue-cloud-16460.png"
+    }
+    if (currentWeather === 3){
+      weatherIcon.src = "https://i.ibb.co/tLHsYN8/cloudy-weather-16459.png"
+    }
+    if ([61, 62, 63, 80, 81, 82].includes(currentWeather)){
+      weatherIcon.src = "https://i.ibb.co/tPRxfQ2/downpour-rain-and-blue-cloud-16463.png"
+    }
+    if ([71, 73, 75, 85, 86].includes(currentWeather)){
+      weatherIcon.src = "https://i.ibb.co/MC5mtQ7/winter-snowfall-16473.png"
+    }
+    if ([95, 96, 99].includes(currentWeather){
+      weatherIcon.src = "https://i.ibb.co/89FPXgr/lightning-and-rainy-weather-16465.png"
+    })
+    
+    tempElement.textContent = `${currentTemp}°`
+    windElement.textContent = `${currentWind}mph`
+}
+
 function printData(data){
   //define current card
   const currentCard = document.getElementById("currentCard")
