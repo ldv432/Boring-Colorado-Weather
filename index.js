@@ -62,9 +62,9 @@ function displayCityInfo(city){
     if ([71, 73, 75, 85, 86].includes(currentWeather)){
       weatherIcon.src = "https://i.ibb.co/MC5mtQ7/winter-snowfall-16473.png"
     }
-    if ([95, 96, 99].includes(currentWeather){
+    if ([95, 96, 99].includes(currentWeather)){
       weatherIcon.src = "https://i.ibb.co/89FPXgr/lightning-and-rainy-weather-16465.png"
-    })
+}
     
     tempElement.textContent = `${currentTemp}°`
     windElement.textContent = `${currentWind}mph`
