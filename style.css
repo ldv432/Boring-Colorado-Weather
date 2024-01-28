@@ -5,7 +5,7 @@ body {
 
 .container {
     max-width: 400px;
-    margin: 0 auto;
+    margin: 20px auto;
     text-align: center;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.5); /* Set the background color to be transparent */
@@ -29,6 +29,10 @@ body {
     margin: auto;
 }
 
+.currentCard .weatherIcon {
+    height: 75px;
+    width: 75px;
+}
 
 h1 {
     font-size: 24px;

@@ -25,8 +25,8 @@ const windElement = document.getElementById("windspeed")
 const weatherIcon = document.getElementById("weatherIcon")
 
 //set size of weather icon so it fits currents card
-weatherIcon.style.width = "75px"
-weatherIcon.style.height = "75px"
+// weatherIcon.style.width = "75px"
+// weatherIcon.style.height = "75px"
 
 //use set of ternary operators to distinguish cities
 locationElement.textContent =
