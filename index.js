@@ -1,3 +1,7 @@
+const projectVideo = 'https://youtu.be/tG2URTIwUAo'
+const projectBlog = 'https://medium.com/@ldv432/weathering-the-weather-app-0d179903f7d1'
+const githubLink = 'https://github.com/ldv432/Boring-Colorado-Weather'
+
 document.addEventListener("DOMContentLoaded", () => {
   fetch('http://localhost:3000/cities')
     .then(res => res.json())
