@@ -15,7 +15,6 @@ function eventListeners(cities){
 }
 
 function displayCityInfo(city){
-console.log(city)
 //declare currents card elements
 const locationElement = document.getElementById("location")
 const tempElement = document.getElementById("temperature")
